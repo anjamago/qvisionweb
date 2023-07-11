@@ -1,0 +1,43 @@
+/*
+Template Name: Admin Template
+Author: Niravjoshi / Wrappixel
+File: scss
+*/
+
+//(Required file)
+@import "variable";
+$zindex-dropdown:                   1000;
+$zindex-sticky:                     1020;
+$zindex-fixed:                      1030;
+$zindex-offcanvas-backdrop:         1040;
+$zindex-offcanvas:                  1045;
+$zindex-modal-backdrop:             1050;
+$zindex-modal:                      1055;
+$zindex-popover:                    1070;
+$zindex-tooltip:                    1080;
+
+// Import Bootstrap source files (Required file)
+@import "bootstrap/bootstrap";
+
+//This is for the components (Required file)
+@import "components";
+
+//This is for the widgets (Required file)
+@import "widgets/widgets";
+
+//This is for the responsive (Required file)
+@import "responsive";
+
+//In This scss you can write your scss
+@import "custom";
+
+//This is for the icons (Required file)
+@import "icons/font-awesome/css/fontawesome-all.css";
+@import "icons/themify-icons/themify-icons.css";
+@import "icons/material-design-iconic-font/css/materialdesignicons.min.css";
+
+
+::ng-deep ngb-modal-backdrop {
+    z-index: 999 !important;
+  
+  }

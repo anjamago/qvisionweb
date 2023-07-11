@@ -30,7 +30,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "node_modules/devextreme/dist/css/dx.common.css",
+              "node_modules/devextreme/dist/css/dx.light.css",
+              "src/assets/scss/style.scss"
             ],
             "scripts": []
           },
@@ -100,5 +102,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "4d99e403-710c-4611-823f-92a3f0d3b6a4"
   }
 }
