@@ -13,7 +13,7 @@ import { catchError, map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class BaseRequestService {
-  private token: string = '';
+  private token: string = sessionStorage.getItem('tk')!;
   basePatch =
     environment.production === false ? environment.dev : environment.prod;
   constructor(private _http: HttpClient) {}
@@ -73,7 +73,7 @@ export class BaseRequestService {
   }
 
   public handleError(error: HttpErrorResponse) {
- 
+
     if (error.error instanceof ErrorEvent) {
       console.error('An error occurred:', error.error.message);
     } else {
@@ -89,7 +89,7 @@ export class BaseRequestService {
     const headers = !!this.token
       ? new HttpHeaders()
           .set('Content-Type', 'application/json')
-          .set('Authorization', this.token)
+          .set('Authorization', `Bearer ${this.token}`)
       : new HttpHeaders().set('Content-Type', 'application/json');
 
     return { headers };

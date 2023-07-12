@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginProviderService } from '../provider/login-provider.service';
 
 //mport { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
@@ -11,7 +12,8 @@ import { Router } from '@angular/router';
 export class LayoutComponent implements OnInit {
  // public config: PerfectScrollbarConfigInterface = {};
 
-  constructor(public router: Router) {}
+  constructor(public router: Router) {
+  }
 
 public innerWidth: number=0;
 public defaultSidebar: string='';
@@ -29,7 +31,11 @@ ngOnInit() {
   }
   this.defaultSidebar = this.sidebartype;
   this.handleSidebar();
+
 }
+
+
+
 
 @HostListener('window:resize', ['$event'])
 onResize() {
